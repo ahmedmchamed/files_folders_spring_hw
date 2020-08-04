@@ -1,4 +1,4 @@
-package com.codeclan.example.files_and_folders_hw;
+package com.codeclan.example.files_and_folders_hw.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -50,5 +50,9 @@ public class User {
 
     public void setFolders(List<Folder> folders) {
         this.folders = folders;
+    }
+
+    public void addFolders(Folder folder) {
+        this.folders.add(folder);
     }
 }

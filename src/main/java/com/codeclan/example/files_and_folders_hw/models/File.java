@@ -1,4 +1,4 @@
-package com.codeclan.example.files_and_folders_hw;
+package com.codeclan.example.files_and_folders_hw.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
