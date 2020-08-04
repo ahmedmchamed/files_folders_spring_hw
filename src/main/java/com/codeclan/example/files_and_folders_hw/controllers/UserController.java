@@ -26,17 +26,17 @@ public class UserController {
     @Autowired
     FolderRepository folderRepository;
 
-    @GetMapping
+    @GetMapping(value = "/files")
     public ResponseEntity<List<File>> getAllFiles() {
         return new ResponseEntity<List<File>>(fileRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping(value = "/folders")
     public ResponseEntity<List<Folder>> getAllFolders() {
         return new ResponseEntity<List<Folder>>(folderRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping(value = "/users")
     public ResponseEntity<List<User>> getAllUsers() {
         return new ResponseEntity<List<User>>(userRepository.findAll(), HttpStatus.OK);
     }
