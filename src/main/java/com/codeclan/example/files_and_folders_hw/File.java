@@ -1,18 +1,30 @@
 package com.codeclan.example.files_and_folders_hw;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="files")
 public class File {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String extension;
-    private int size;
-    private Folder folder;
 
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "extension")
+    private String extension;
+
+    @Column(name = "size")
+    private int size;
+
+    @ManyToOne
+    @JoinColumn(name = "folder_id", nullable = false)
+    @JsonBackReference
+    private Folder folder;
 
     public File() {}
 
